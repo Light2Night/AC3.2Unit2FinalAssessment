@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gGB-hf-1mj" customClass="colorTableViewCell" customModule="AC3_2Unit2FinalAssessment" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="colorTableViewCell" id="gGB-hf-1mj" customClass="colorTableViewCell" customModule="AC3_2Unit2FinalAssessment" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gGB-hf-1mj" id="79x-rn-CuU">
@@ -42,7 +42,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="ETE-BD-psI"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="oEX-E6-7lM"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueForView" id="oEX-E6-7lM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFt-Hd-z36" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -93,6 +93,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="qwE-zS-9pV" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Clf-Pg-ns2">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>

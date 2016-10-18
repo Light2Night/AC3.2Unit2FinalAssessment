@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var stepper: UIStepper!
@@ -26,23 +26,41 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func sliderMoves(_ sender: UISlider) {
-        var change = slider.value
-        textOutput.text = String(Double(change))
-        stepper.value = Double(sender.value)
+//        var change = slider.value
+//        textOutput.text = String(Double(change))
+//        stepper.value = Double(sender.value)
+         stepper.value = Double(slider.value)
+        textOutput.text = "\(slider.value)"
+        
     }
 
     @IBAction func stepperMoves(_ sender: UIStepper) {
-        var change = stepper.value
-        textOutput.text = String(Double(change))
+//        var change = stepper.value
+//        textOutput.text = String(Double(change))
+        slider.value = Float(stepper.value)
+        textOutput.text = "\(stepper.value)"
+        
+        
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+   //MARK
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let textFieldText = textField.text, let doubleText = Double(textFieldText), let floatText = Float(textFieldText) {
+            slider.value = floatText
+            stepper.value = doubleText
+            textOutput.text = textFieldText
     }
-    */
-
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if let textFieldText = textField.text, let doubleText = Double(textFieldText), let floatText = Float(textFieldText) {
+            slider.value = floatText
+            stepper.value = doubleText
+            textOutput.text = textFieldText
+        }
+        
+        return true
+    }
+    
+  
+}
 }

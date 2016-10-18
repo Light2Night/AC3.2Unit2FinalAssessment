@@ -89,13 +89,13 @@
 			children = (
 				A206ABA21DA69D6000973F65 /* AppDelegate.swift */,
 				A206ABA41DA69D6000973F65 /* ViewController.swift */,
-				A206ABC21DA69F4600973F65 /* CrayonData.swift */,
-				A206ABC41DA69F7300973F65 /* Crayon.swift */,
+				A206ABCE1DA6C32100973F65 /* SecondViewController.swift */,
 				A206ABC81DA6A10F00973F65 /* colorTableViewController.swift */,
 				A206ABCC1DA6C21C00973F65 /* colorTableViewCell.swift */,
-				A206ABCE1DA6C32100973F65 /* SecondViewController.swift */,
+				A206ABC41DA69F7300973F65 /* Crayon.swift */,
 				A206ABA61DA69D6000973F65 /* Main.storyboard */,
 				A206ABA91DA69D6000973F65 /* Assets.xcassets */,
+				A206ABC21DA69F4600973F65 /* CrayonData.swift */,
 				A206ABAB1DA69D6000973F65 /* LaunchScreen.storyboard */,
 				A206ABAE1DA69D6000973F65 /* Info.plist */,
 			);
@@ -426,6 +426,7 @@
 				A206ABBE1DA69D6000973F65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A206ABBF1DA69D6000973F65 /* Build configuration list for PBXNativeTarget "AC3.2Unit2FinalAssessmentTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +435,7 @@
 				A206ABC11DA69D6000973F65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

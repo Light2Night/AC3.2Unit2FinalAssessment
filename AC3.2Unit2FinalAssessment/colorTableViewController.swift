@@ -23,6 +23,13 @@ class colorTableViewController: UITableViewController {
         }
       
     }
+    
+    func getColors(for indexPath:IndexPath)->UIColor{
+                let red = Float(crayons[indexPath.row].red)
+                let blue = Float(crayons[indexPath.row].blue)
+                let green = Float(crayons[indexPath.row].green)
+                return UIColor(colorLiteralRed: red, green: green, blue: blue, alpha: 1.0)
+            }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -38,8 +45,8 @@ class colorTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-//      return self.crayons.count
-        return 0
+      return self.crayons.count
+        //return 0
     }
 
     
@@ -47,9 +54,9 @@ class colorTableViewController: UITableViewController {
         let cellIdentifer = "colorTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifer, for: indexPath) as! colorTableViewCell
 
-        let color = self.crayons[indexPath.row]
-        cell.colorLabel.text = color.name
-        
+        let color = self.crayons[indexPath.row].name
+        cell.colorLabel.text = color
+        cell.backgroundColor = getColors(for: indexPath)
         return cell
     }
     
@@ -89,14 +96,29 @@ class colorTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedColors = crayons[indexPath.row]
+        performSegue(withIdentifier: "segueForView" , sender: selectedColors)
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let tapped = sender as? colorTableViewCell {
+            
+        if segue.identifier == "segueForView" {
+            
+                
+            let viewController = segue.destination as! ViewController
+            let cellIndexPath = self.tableView.indexPath(for: tapped)!
+            let selectedColor = crayons[cellIndexPath.row]
+            viewController.viewColor = selectedColor
+//                viewController.viewColor = colorRow
+            
+            
+    }
+    }
+    }
 
 }
